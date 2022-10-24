@@ -12,13 +12,27 @@ getMovies()
 
 function grabMovieImage (movieObject){
     const imgDiv = document.querySelector('#movie-images')
-    // const imgBar = document.querySelector('#image-bar')
     const img = document.createElement('img')
     img.src = movieObject.image
     imgDiv.append(img)
-    console.log(movieObject)
 
+    //add click here? 
+    img.addEventListener('click', () => displayMovieInfo(movieObject))
 }
 
+function displayMovieInfo (movieObject){
+    let movieInformationDivId = document.getElementById('movie-information')
+    let imageDisplay = document.querySelector('#image-display')
+    imageDisplay.src = movieObject.image
+    movieInformationDivId.append(imageDisplay)
+
+    const movieName = document.createElement("movie-name")
+    movieName.innerContent = movieObject.name
+
+    console.lot(movieName)
+
+    
+    
+}
 
 
