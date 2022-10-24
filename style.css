@@ -1,3 +1,18 @@
 h1 {text-align: center;
 
 }
+
+#movie-images {
+    display: flex;
+    overflow-x: auto;
+    margin: 1rem 0;
+    max-width: calc(100vw - 2rem);
+  }
+
+  #movie-images img {
+    display: block;
+    flex: 0 1 auto;
+    height: 150px;
+    margin: auto;
+    cursor: pointer;
+  }
