@@ -16,3 +16,9 @@ h1 {text-align: center;
     margin: auto;
     cursor: pointer;
   }
+
+  #movie-information img {
+    display: block;
+    margin: auto;
+    height: 500px;
+  }

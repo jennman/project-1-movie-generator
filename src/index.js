@@ -26,12 +26,18 @@ function displayMovieInfo (movieObject){
     imageDisplay.src = movieObject.image
     movieInformationDivId.append(imageDisplay)
 
-    const movieName = document.createElement("movie-name")
-    movieName.innerContent = movieObject.name
+    const movieName = document.querySelector('#name-display')
+    movieName.textContent = movieObject.name
+    movieInformationDivId.append(movieName)
+    console.log(movieName)
 
-    console.lot(movieName)
+   
+    
+
 
     
+
+
     
 }
 
