@@ -4,12 +4,7 @@ const btn = document.querySelector('#random-button')
 let movieInformationDivId = document.getElementById('movie-information')
 
 
-// btn.addEventListener('click', () => getRandomMovie(moviesArray))
-// function getRandomMovie(moviesArray) {
-//     const randomMovie = moviesArray[Math.floor(Math.random() * moviesArray.length)]
-//     displayMovieInfo(randomMovie)
-//     // console.log(randomMovie)
-// }
+
 function getRandomMovie(moviesArray) {
     btn.addEventListener('click', () => {
         const randomMovie = moviesArray[Math.floor(Math.random() * moviesArray.length)]
@@ -58,6 +53,10 @@ function displayMovieInfo (movieObject){
     description.textContent = movieObject.description
     movieInformationDivId.append(description)
 
+    const likeButton = document.getElementById('like-button')
+    likeButton.addEventListener('click', (event) => {
+     event.target.style.color = '#000000'
+})
     
 }
 
