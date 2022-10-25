@@ -53,18 +53,19 @@ function displayMovieInfo (movieObject){
     const description = document.querySelector('#description-display')
     description.textContent = movieObject.description
     movieInformationDivId.append(description)
-    likeButton.textContent = movieObject.likes
+    likesNumber.textContent = movieObject.likes
+    //number and button were flipped, we want numbers to show when highlighted, not text content. kimber 
     likesNumber.append(likeButton)
 }
-likeButton.addEventListener('click', (event) => {
+//displayMovieInfo(movieObject)
+likeButton.addEventListener('click', (event) => 
+{
     event.target.style.color = '#000000'
-    m.value = likes++
+    likesNumber.innerText = `${.likes} 'likes'`
     // parseInt(movieObject.likes++)
-    
-    displayMovieInfo(movieObject)
     // const letCount = Number(event.likeButton.innerText) +1 
     // event.likeButton.innerText = letCount
-})
+}
     
 
 
