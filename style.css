@@ -7,6 +7,8 @@ h1 {text-align: center;
     overflow-x: auto;
     margin: 1rem 0;
     max-width: calc(100vw - 2rem);
+    
+
   }
 
   #movie-images img {
@@ -15,10 +17,48 @@ h1 {text-align: center;
     height: 150px;
     margin: auto;
     cursor: pointer;
+    
+    
   }
 
   #movie-information img {
-    display: block;
-    margin: auto;
+    float: right;
+    margin-left: 100px;
     height: 500px;
   }
+
+  #movie-information p {
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 500px;
+    align-items: center;
+    /* padding-top: 100px;  */
+  }
+  
+  #movie-information h2{
+    text-align: center;
+    align-items: center;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding-top: 200px; 
+
+  }
+
+  #random-button {
+    float: left;
+    margin-right: auto;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    outline: none;
+    
+  }
+
+  #random-button:hover {
+    background-color: rgb(9, 134, 9);
+} 
