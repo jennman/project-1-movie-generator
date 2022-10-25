@@ -2,7 +2,8 @@
 const moviesUrl = 'http://localhost:3000/movies'
 const btn = document.querySelector('#random-button')
 let movieInformationDivId = document.getElementById('movie-information')
-
+let likesNumber = document.getElementById('show-the-likes')
+const likeButton = document.getElementById('like-button')
 
 
 function getRandomMovie(moviesArray) {
@@ -52,11 +53,18 @@ function displayMovieInfo (movieObject){
     const description = document.querySelector('#description-display')
     description.textContent = movieObject.description
     movieInformationDivId.append(description)
-
-    const likeButton = document.getElementById('like-button')
-    likeButton.addEventListener('click', (event) => {
-     event.target.style.color = '#000000'
+    likeButton.textContent = movieObject.likes
+    likesNumber.append(likeButton)
+}
+likeButton.addEventListener('click', (event) => {
+    event.target.style.color = '#000000'
+    m.value = likes++
+    // parseInt(movieObject.likes++)
+    
+    displayMovieInfo(movieObject)
+    // const letCount = Number(event.likeButton.innerText) +1 
+    // event.likeButton.innerText = letCount
 })
     
-}
+
 
