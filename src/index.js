@@ -63,8 +63,12 @@ function displayMovieInfo (movieObject){
 
 
 
-    
-const submitForm = document.getElementById("review-form")
+
+
+
+}
+
+ const submitForm = document.getElementById("review-form")
  console.log(submitForm)
 
 submitForm.addEventListener("submit", (eventObject) => {
@@ -83,16 +87,12 @@ console.log(reviewList)
 
 reviewList.append(liReview)
 
-
-
-
-
-
 })
 
- 
 
-}
+
+
+
 // //displayMovieInfo(movieObject)
 // likeButton.addEventListener('click', (event) => 
 // {
