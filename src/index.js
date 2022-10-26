@@ -4,7 +4,8 @@ const btn = document.querySelector('#random-button')
 let movieInformationDivId = document.getElementById('movie-information')
 let likesNumber = document.getElementById('show-the-likes')
 const likeButton = document.getElementById('like-button')
-
+const submitForm = document.getElementById("review-form")
+ //console.log(submitForm)
 
 function getRandomMovie(moviesArray) {
     btn.addEventListener('click', () => {
@@ -21,6 +22,7 @@ function getMovies () {
         iterateMoviesArray(moviesArray)
         getRandomMovie(moviesArray)
         displayMovieInfo(moviesArray[0])
+        
     })
 }
 getMovies()
@@ -34,7 +36,6 @@ function grabMovieImage (movieObject){
     const img = document.createElement('img')
     img.src = movieObject.image
     imgDiv.append(img)
-
     //add click here? 
     img.addEventListener('mouseover', () => displayMovieInfo(movieObject))
     // img.addEventListener('mouseout', () => mouseOutImage(movieObject))
@@ -47,29 +48,36 @@ function displayMovieInfo (movieObject){
     let imageDisplay = document.querySelector('#image-display')
     imageDisplay.src = movieObject.image
     movieInformationDivId.append(imageDisplay)
-
-    // const movieName = document.querySelector('#name-display')
+    const movieName = document.querySelector('#name-display')
     const h2 = document.querySelector('#name-year')
     h2.textContent = `${movieObject.name} ${movieObject.year}`
     movieInformationDivId.append(h2)
-
     const description = document.querySelector('#description-display')
     description.textContent = movieObject.description
     movieInformationDivId.append(description)
     likesNumber.textContent = movieObject.likes
-    //number and button were flipped, we want numbers to show when highlighted, not text content. kimber 
+    // //number and button were flipped, we want numbers to show when highlighted, not text content. kimber 
     likesNumber.append(likeButton)
-
-
-
-
-
-
-
+    tryLikeButton(movieObject)
 }
 
- const submitForm = document.getElementById("review-form")
- console.log(submitForm)
+
+function tryLikeButton(movieObject){
+    likeButton.addEventListener('click', (event) => 
+    {
+        //event.preventDefault()
+        event.target.style.color = '#000000'
+        likesNumber.event.innerText = movieObject.likes++
+        // likesNumber.innerText = movieObject.likes++
+        // likesNumber.innerText = `${.likes} 'likes'`
+        //likesNumber.textContent = movieObject.likes
+        //number and button were flipped, we want numbers to show when highlighted, not text content. kimber 
+        //likesNumber.append(likeButton)
+        // parseInt(movieObject.likes++)
+        // const letCount = Number(event.likeButton.innerText) +1 
+        // event.likeButton.innerText = letCount
+    
+    })}
 
 submitForm.addEventListener("submit", (eventObject) => {
     eventObject.preventDefault();
@@ -86,6 +94,7 @@ const reviewList = document.getElementById("review-list")
 console.log(reviewList)
 
 reviewList.append(liReview)
+    
 
 })
 
@@ -93,16 +102,4 @@ reviewList.append(liReview)
 
 
 
-// //displayMovieInfo(movieObject)
-// likeButton.addEventListener('click', (event) => 
-// {
-//     event.target.style.color = '#000000'
-//     likesNumber.innerText = `${.likes} 'likes'`
-//     // parseInt(movieObject.likes++)
-//     // const letCount = Number(event.likeButton.innerText) +1 
-//     // event.likeButton.innerText = letCount
-// }
-    
 
-
-// )
