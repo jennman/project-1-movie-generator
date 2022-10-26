@@ -40,6 +40,9 @@ function grabMovieImage (movieObject){
     // img.addEventListener('mouseout', () => mouseOutImage(movieObject))
 }
 
+
+
+
 function displayMovieInfo (movieObject){
     let imageDisplay = document.querySelector('#image-display')
     imageDisplay.src = movieObject.image
@@ -56,16 +59,50 @@ function displayMovieInfo (movieObject){
     likesNumber.textContent = movieObject.likes
     //number and button were flipped, we want numbers to show when highlighted, not text content. kimber 
     likesNumber.append(likeButton)
+
+
+
+
+    
+const submitForm = document.getElementById("review-form")
+ console.log(submitForm)
+
+submitForm.addEventListener("submit", (eventObject) => {
+    eventObject.preventDefault();
+
+console.log("clicked")
+const userTextinput = eventObject.target.review.value;
+console.log(userTextinput)
+
+const liReview = document.createElement("li")
+liReview.textContent= userTextinput
+console.log(liReview)
+
+const reviewList = document.getElementById("review-list")
+console.log(reviewList)
+
+reviewList.append(liReview)
+
+
+
+
+
+
+})
+
+ 
+
 }
-//displayMovieInfo(movieObject)
-likeButton.addEventListener('click', (event) => 
-{
-    event.target.style.color = '#000000'
-    likesNumber.innerText = `${.likes} 'likes'`
-    // parseInt(movieObject.likes++)
-    // const letCount = Number(event.likeButton.innerText) +1 
-    // event.likeButton.innerText = letCount
-}
+// //displayMovieInfo(movieObject)
+// likeButton.addEventListener('click', (event) => 
+// {
+//     event.target.style.color = '#000000'
+//     likesNumber.innerText = `${.likes} 'likes'`
+//     // parseInt(movieObject.likes++)
+//     // const letCount = Number(event.likeButton.innerText) +1 
+//     // event.likeButton.innerText = letCount
+// }
     
 
 
+// )
