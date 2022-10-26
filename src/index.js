@@ -2,14 +2,10 @@
 const moviesUrl = 'http://localhost:3000/movies'
 const btn = document.querySelector('#random-button')
 let movieInformationDivId = document.getElementById('movie-information')
+let likesNumber = document.getElementById('show-the-likes')
+const likeButton = document.getElementById('like-button')
 
 
-// btn.addEventListener('click', () => getRandomMovie(moviesArray))
-// function getRandomMovie(moviesArray) {
-//     const randomMovie = moviesArray[Math.floor(Math.random() * moviesArray.length)]
-//     displayMovieInfo(randomMovie)
-//     // console.log(randomMovie)
-// }
 function getRandomMovie(moviesArray) {
     btn.addEventListener('click', () => {
         const randomMovie = moviesArray[Math.floor(Math.random() * moviesArray.length)]
@@ -57,7 +53,19 @@ function displayMovieInfo (movieObject){
     const description = document.querySelector('#description-display')
     description.textContent = movieObject.description
     movieInformationDivId.append(description)
-
-    
+    likesNumber.textContent = movieObject.likes
+    //number and button were flipped, we want numbers to show when highlighted, not text content. kimber 
+    likesNumber.append(likeButton)
 }
+//displayMovieInfo(movieObject)
+likeButton.addEventListener('click', (event) => 
+{
+    event.target.style.color = '#000000'
+    likesNumber.innerText = `${.likes} 'likes'`
+    // parseInt(movieObject.likes++)
+    // const letCount = Number(event.likeButton.innerText) +1 
+    // event.likeButton.innerText = letCount
+}
+    
+
 
