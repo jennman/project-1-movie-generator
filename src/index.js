@@ -44,6 +44,9 @@ function grabMovieImage (movieObject){
     // img.addEventListener('mouseout', () => mouseOutImage(movieObject))
 }
 
+
+
+
 function displayMovieInfo (movieObject){
     let imageDisplay = document.querySelector('#image-display')
     imageDisplay.src = movieObject.image
@@ -58,6 +61,38 @@ function displayMovieInfo (movieObject){
     description.textContent = movieObject.description
     movieInformationDivId.append(description)
 
+
+
+
     
+const submitForm = document.getElementById("review-form")
+ console.log(submitForm)
+
+submitForm.addEventListener("submit", (eventObject) => {
+    eventObject.preventDefault();
+
+console.log("clicked")
+const userTextinput = eventObject.target.review.value;
+console.log(userTextinput)
+
+const liReview = document.createElement("li")
+liReview.textContent= userTextinput
+console.log(liReview)
+
+const reviewList = document.getElementById("review-list")
+console.log(reviewList)
+
+reviewList.append(liReview)
+
+
+
+
+
+
+})
+
+ 
+
 }
+
 
